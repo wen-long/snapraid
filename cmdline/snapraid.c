@@ -576,6 +576,7 @@ int main(int argc, char* argv[])
 	/* defaults */
 	config(conf, sizeof(conf), argv[0]);
 	memset(&opt, 0, sizeof(opt));
+    opt.skip_device = 1;
 	opt.io_error_limit = 100;
 	blockstart = 0;
 	blockcount = 0;
@@ -1035,8 +1036,8 @@ int main(int argc, char* argv[])
 	default :
 		if (opt.force_device) {
 			/* LCOV_EXCL_START */
-			log_fatal("You cannot use -D, --force-device with the '%s' command\n", command);
-			exit(EXIT_FAILURE);
+//			log_fatal("You cannot use -D, --force-device with the '%s' command\n", command);
+//			exit(EXIT_FAILURE);
 			/* LCOV_EXCL_STOP */
 		}
 	}
